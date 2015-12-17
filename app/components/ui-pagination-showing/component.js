@@ -1,0 +1,1 @@
+export { default } from 'ember-data-table/components/ui-pagination-showing/component';

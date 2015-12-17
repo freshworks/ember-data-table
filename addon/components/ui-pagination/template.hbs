@@ -1,0 +1,17 @@
+{{#unless pager}}
+  <li class="previous {{if isFirst 'disabled'}}">
+    <a href={{previousUrl}} {{action 'previous'}} data-toggle="tooltip" title="Previous" data-placement="bottom">{{paginationPrevious}}</a>
+  </li>
+
+  {{#each pages as |page|}}
+    {{ui-pagination-item page=page selected=current seperator=seperator urlTemplate=urlTemplate pageSet='pageChanged'}}
+  {{/each}}
+
+  <li class="next {{if isLast 'disabled'}}">
+    <a href={{nextUrl}} {{action 'next'}} data-toggle="tooltip" title="Next" data-placement="bottom">{{paginationNext}}</a>
+  </li>
+{{else}}
+  <a href={{previousUrl}} {{action 'previous'}} data-toggle="tooltip" title="Previous" data-placement="bottom" class="pager-item pager-previous {{if isFirst 'hide'}}">{{pagerPrevious}}</a>
+  <span class="bullet"></span>
+  <a href={{nextUrl}} {{action 'next'}} data-toggle="tooltip" title="Next" data-placement="bottom" class="pager-item pager-next {{if isLast 'hide'}}">{{pagerNext}}</a>
+{{/unless}}
