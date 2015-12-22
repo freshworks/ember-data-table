@@ -10,13 +10,6 @@ export default Ember.Mixin.create({
   page: 1,
   perPage: 25,
   per_page: alias('perPage'),
-  showPrevNext: computed('model', 'totalCount', {
-    get(){
-      // A condition to check if the Pagination component needs to be rendered or not.
-      let count = this.get('totalCount');
-      return (count > this.get('perPage'));
-    }
-  }),
 
   // TODO-EMBER - Hack - move this to route and reevaluate the pagiation plugin
   onPageChange: function () {

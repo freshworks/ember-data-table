@@ -17,14 +17,14 @@ export default Ember.Component.extend({
   }.observes('activeColumn'),
 
   //Action Names
-  sorted: 'onSort',
+  onSort: 'onSort',
 
   actions: {
     onSort: function (activeColumn) {
       this.set('activeColumn', activeColumn);
 
       // Sending to controller
-      this.sendAction('sorted', {
+      this.sendAction('onSort', {
         sort: this.get('activeColumn.sort'),
         sortType: this.get('activeColumn.sortType')
       });

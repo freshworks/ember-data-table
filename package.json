@@ -37,6 +37,7 @@
     "ember-try": "~0.0.8"
   },
   "keywords": [
+    "ember-addon",
     "ember-data-table",
     "ember-table",
     "ember-list"
