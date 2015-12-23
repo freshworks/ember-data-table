@@ -138,7 +138,7 @@ to use pagination and pagination-showing component we must need to import and ex
 * **current (@computed property)** - must use the same name "page" (mixin will take care of the rest).
 ________
 
-## RFC
+## Enhancement
 
 * **Build it as a preliminary Addon to solve some basic use-cases & frequently used features but moving forward to Ember data table v 1.0 will be stable, flexible, configurable, enhanceable.**
 
@@ -149,7 +149,7 @@ ________
 * Enhanceable architecture to build cool features like pagination, selectall, sortBy & orderBy (server-side / local), add / remove columns etc.
 
 
-##Watch this area for more info about v 1.0##
+###Watch this area for more info about v 1.0
 
 ## Running
 
