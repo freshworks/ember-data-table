@@ -6,6 +6,7 @@ const {
 } = Ember;
 
 export default Ember.Component.extend({
+  attributeBindings: ['rowspan', 'colspan'],
   layout: layout,
   tagName: 'th',
   classNameBindings: ['sortType', 'isSortable:sortable', 'isActiveColumn:active'],
