@@ -4,7 +4,7 @@ import layout from './template';
 export default Ember.Component.extend({
   layout: layout,
   tagName: 'table',
-  classNames: ['table', 'table-hover'],
+  classNames: ['table'],
 
   actions: {
     updateModel: function (params) {
