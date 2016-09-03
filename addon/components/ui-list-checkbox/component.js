@@ -3,7 +3,9 @@ import layout from './template';
 
 const {
   computed,
-  observer
+  observer,
+  on,
+  run
 } = Ember;
 
 export default Ember.Component.extend({
@@ -21,24 +23,26 @@ export default Ember.Component.extend({
   }),
 
   itemId: computed('content', {
-    get: function() {
+    get() {
       return 'checkbox_' + this.get('id');
     }
   }),
 
   id: computed('itemId', {
-    get: function () {
+    get() {
       return this.get('content.id');
     }
   }),
 
-  registerOnParent: function() {
-    this.set('content.isSelected', false);
-    this.sendAction('registerToggle', this);
-  }.on('didInsertElement'),
+  registerOnParent: on('init', function() {
+    run.scheduleOnce('afterRender', this, () => {
+      this.set('content.isSelected', false);
+      this.sendAction('registerToggle', this);
+    });
+  }),
 
-  deregisterOnParent: function() {
+  deregisterOnParent: on('willDestroyElement', function() {
     this.sendAction('deregisterToggle', this);
-  }.on('willDestroyElement')
+  })
 
 });
