@@ -84,7 +84,7 @@ export default Ember.Component.extend({
     }
   }),
 
-  showPrevNext: computed('totalCount', {
+  showPrevNext: computed('totalCount', 'perPage', {
     get(){
       // A condition to check if the Pagination component needs to be rendered or not.
       return (this.get('totalCount') > this.get('perPage'));
